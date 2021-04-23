@@ -11,7 +11,8 @@ jobs:
 
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
-       run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
+       #run: curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
+       run: curl -sL https://raw.githubusercontent.com/v5star/vps/main/debug-github-actions.sh | bash
        env:
         NGROK_TOKEN: 1pxqzgGV5ITvmr8QlJIq8DtmmSF_447RibnMvmkt4tVMkfrYa
         USER_PASS: v5star
