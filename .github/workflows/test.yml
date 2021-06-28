@@ -5,10 +5,18 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      ip_addr:
-        description: '固件 IP 地址 [可选]'
+      src_url:
+        description: '固件源地址'
         default: ''
 ### END
+
+env:
+# 设备名称 (可在 README 中找到获取方法)
+   
+# 源码仓库:分支
+  DEFAULT_SOURCE: ${{ github.event.inputs.src_url }}
+  
+  
  
 jobs:
   build:
@@ -19,5 +27,5 @@ jobs:
 
     - name: 输出获取的数据
       run: |         
-        echo -e "输入的IP: ${{ github.event.inputs.ip_addr }}"
+        echo -e "输入的地址源: $DEFAULT_SOURCE"
      
