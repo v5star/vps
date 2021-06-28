@@ -1,0 +1,24 @@
+name: 测试获取输入
+
+### 以下内容请保持不变 (修改 环境变量设置 中的信息)
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ip_addr:
+        description: '固件 IP 地址 [可选]'
+        default: ''
+### END
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+
+    - name: 输出获取的数据
+      run: |
+         
+        echo -e "输入的IP: ${{ github.event.inputs.IP }}"
+     
