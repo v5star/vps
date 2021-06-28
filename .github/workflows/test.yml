@@ -19,5 +19,5 @@ jobs:
 
     - name: 输出获取的数据
       run: |         
-        echo -e "输入的IP: ${{ github.event.inputs.IP }}"
+        echo -e "输入的IP: ${{ github.event.inputs.ip_addr }}"
      
