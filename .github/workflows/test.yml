@@ -7,14 +7,18 @@ on:
     inputs:
       src_url:
         description: '固件源地址'
-        default: ''
+        default: '' 
+      ip:
+         description: '固件管理IP[可选]'
+         default: ''
+    
 ### END
 
 env:
 # 设备名称 (可在 README 中找到获取方法)
    
 # 源码仓库:分支
-  DEFAULT_SOURCE: ${{ github.event.inputs.src_url }}
+  DEFAULT_SOURCE: ${{ github.event.inputs.src_url }} 
   
   
  
@@ -27,5 +31,5 @@ jobs:
 
     - name: 输出获取的数据
       run: |         
-        echo -e "输入的地址源: $DEFAULT_SOURCE"
+        echo -e "输入的地址源: $DEFAULT_SOURCE\n管理IP: ${{ github.event.inputs.ip }} "
      
